@@ -47,9 +47,9 @@ enum AppEnvironment: String
         switch self
         {
             case .dev:
-                return URL(string: "https://island-bramble.glitch.me/test")!
-            case .test:
                 return URL(string: "http://192.168.33.14:5000")!
+            case .test:
+                return URL(string: "https://island-bramble.glitch.me/test")!
         }
     }
 }

@@ -23,6 +23,11 @@ struct ContentView: View {
     }
     var body: some View {
         VStack {
+            if model.orders.isEmpty
+            {
+                Text("No orders available!")
+                    .accessibilityIdentifier("noOrdersText")
+            }
             List(model.orders)
             { order in
                 OrderCellView(order: order)
@@ -35,6 +40,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(CoffeeModel(webservice: Webservice()))
+        var config = Configuration()
+        ContentView().environmentObject(CoffeeModel(webservice: Webservice(baseURL: config.environment.baseURL)))
     }
 }
