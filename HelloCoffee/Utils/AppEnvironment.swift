@@ -22,8 +22,7 @@ enum Endpoints
         }
     }
 }
-struct
-Configuration
+struct Configuration
 {
     lazy var environment: AppEnvironment =
     {

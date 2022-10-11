@@ -13,7 +13,7 @@ final class app_launched_with_no_orders: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         continueAfterFailure = false
-        app.launchEnvironment = ["ENV": "DEV"]
+        app.launchEnvironment = ["ENV": "TEST"]
         app.launch()
         
         XCTAssertEqual("No orders available!", app.staticTexts["noOrdersText"].label)

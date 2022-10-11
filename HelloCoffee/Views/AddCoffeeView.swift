@@ -20,6 +20,9 @@ struct AddCoffeeView: View {
     @State private var coffeeSize: CoffeeSize = .medium
     @State private var errors: AddCoffeeErrors = AddCoffeeErrors()
     
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var model: CoffeeModel
+    
     var validForm: Bool
     {
         errors = AddCoffeeErrors()
@@ -49,7 +52,21 @@ struct AddCoffeeView: View {
         }
         
         // return error messages empty
-        return price.isEmpty && coffeeName.isEmpty && name.isEmpty
+        return errors.price.isEmpty && errors.coffeeName.isEmpty && errors.name.isEmpty
+    }
+    
+    private func placeOrder() async
+    {
+        let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, coffeeSize: coffeeSize)
+        do
+        {
+            try await model.placeOrder(order)
+            dismiss()
+        }
+        catch
+        {
+            print(error)
+        }
     }
     
     var body: some View
@@ -87,11 +104,14 @@ struct AddCoffeeView: View {
                 if validForm
                 {
                     // place order
-                    
+                    Task
+                    {
+                        await placeOrder()
+                    }
                 }
             }.accessibilityIdentifier("placeOrderButton")
                 .centerHorizontally()
-        }
+        }.navigationTitle("Place Order")
     }
 }
 

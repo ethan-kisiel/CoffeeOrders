@@ -22,7 +22,17 @@ struct ContentView: View {
         }
     }
     var body: some View {
-        VStack {
+        NavigationLink(value: Route.addOrder)
+        {
+            HStack(alignment: .top)
+            {
+                Spacer()
+                Text("Add New Order")
+                    .accessibilityIdentifier("placeOrderButton")
+            }.padding(9)
+        }
+        VStack
+        {
             if model.orders.isEmpty
             {
                 Text("No orders available!")
@@ -41,6 +51,10 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         var config = Configuration()
-        ContentView().environmentObject(CoffeeModel(webservice: Webservice(baseURL: config.environment.baseURL)))
+        NavigationStack
+        {
+            ContentView()
+                .environmentObject(CoffeeModel(webservice: Webservice(baseURL: config.environment.baseURL)))
+        }
     }
 }

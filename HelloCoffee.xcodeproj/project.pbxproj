@@ -91,8 +91,8 @@
 		88275F3928EB4CBE00237B60 /* HelloCoffee */ = {
 			isa = PBXGroup;
 			children = (
-				88275F5728EF198300237B60 /* Utils */,
 				88275F5428EE0A1C00237B60 /* Extensions */,
+				88275F5728EF198300237B60 /* Utils */,
 				88275F5128EB5A7100237B60 /* Views */,
 				88275F4B28EB53CC00237B60 /* Models */,
 				88275F4828EB537200237B60 /* Services */,
