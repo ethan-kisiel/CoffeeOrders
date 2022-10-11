@@ -18,6 +18,9 @@
 		88275F5628EE0A4F00237B60 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F5528EE0A4F00237B60 /* NumberFormatter+Extensions.swift */; };
 		88275F5928EF199C00237B60 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F5828EF199C00237B60 /* AppEnvironment.swift */; };
 		88275F6128EF2FA600237B60 /* HelloCoffeeEnd2EndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6028EF2FA600237B60 /* HelloCoffeeEnd2EndTests.swift */; };
+		88275F6A28F08CBB00237B60 /* AddCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6928F08CBB00237B60 /* AddCoffeeView.swift */; };
+		88275F6C28F08F7300237B60 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6B28F08F7300237B60 /* View+Extensions.swift */; };
+		88275F6E28F0995F00237B60 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6D28F0995F00237B60 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		88275F5828EF199C00237B60 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		88275F5E28EF2FA600237B60 /* HelloCoffeeEnd2EndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloCoffeeEnd2EndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88275F6028EF2FA600237B60 /* HelloCoffeeEnd2EndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeEnd2EndTests.swift; sourceTree = "<group>"; };
+		88275F6928F08CBB00237B60 /* AddCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeView.swift; sourceTree = "<group>"; };
+		88275F6B28F08F7300237B60 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		88275F6D28F0995F00237B60 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				88275F5228EB5A8200237B60 /* OrderCellView.swift */,
+				88275F6928F08CBB00237B60 /* AddCoffeeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				88275F5528EE0A4F00237B60 /* NumberFormatter+Extensions.swift */,
+				88275F6B28F08F7300237B60 /* View+Extensions.swift */,
+				88275F6D28F0995F00237B60 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,12 +265,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				88275F3D28EB4CBE00237B60 /* ContentView.swift in Sources */,
+				88275F6E28F0995F00237B60 /* String+Extensions.swift in Sources */,
 				88275F4F28EB568000237B60 /* CoffeeModel.swift in Sources */,
 				88275F5628EE0A4F00237B60 /* NumberFormatter+Extensions.swift in Sources */,
 				88275F3B28EB4CBE00237B60 /* HelloCoffeeApp.swift in Sources */,
+				88275F6A28F08CBB00237B60 /* AddCoffeeView.swift in Sources */,
 				88275F4D28EB53DA00237B60 /* Order.swift in Sources */,
 				88275F5928EF199C00237B60 /* AppEnvironment.swift in Sources */,
 				88275F4A28EB538600237B60 /* Webservice.swift in Sources */,
+				88275F6C28F08F7300237B60 /* View+Extensions.swift in Sources */,
 				88275F5328EB5A8200237B60 /* OrderCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
