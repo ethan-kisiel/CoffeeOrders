@@ -14,8 +14,12 @@ struct OrderCellView: View {
         {
             VStack(alignment: .leading)
             {
-                Text(order.name).accessibilityIdentifier("orderNameText").fontWeight(.bold)
+                Text(order.name)
+                    .accessibilityIdentifier("orderNameText")
+                    .fontWeight(.bold)
+                
                 Text("\(order.coffeeName) (\(order.coffeeSize.rawValue))")
+                    .accessibilityIdentifier("coffeeNameAndSizeText")
             }
             Spacer()
             Text(order.total as NSNumber, formatter: NumberFormatter.currency)

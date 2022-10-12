@@ -21,6 +21,7 @@
 		88275F6A28F08CBB00237B60 /* AddCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6928F08CBB00237B60 /* AddCoffeeView.swift */; };
 		88275F6C28F08F7300237B60 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6B28F08F7300237B60 /* View+Extensions.swift */; };
 		88275F6E28F0995F00237B60 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6D28F0995F00237B60 /* String+Extensions.swift */; };
+		88275F7028F71B9700237B60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6F28F71B9700237B60 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		88275F6928F08CBB00237B60 /* AddCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeView.swift; sourceTree = "<group>"; };
 		88275F6B28F08F7300237B60 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		88275F6D28F0995F00237B60 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		88275F6F28F71B9700237B60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				88275F3C28EB4CBE00237B60 /* ContentView.swift */,
 				88275F3E28EB4CBF00237B60 /* Assets.xcassets */,
 				88275F4028EB4CBF00237B60 /* Preview Content */,
+				88275F6F28F71B9700237B60 /* Constants.swift */,
 			);
 			path = HelloCoffee;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				88275F4A28EB538600237B60 /* Webservice.swift in Sources */,
 				88275F6C28F08F7300237B60 /* View+Extensions.swift in Sources */,
 				88275F5328EB5A8200237B60 /* OrderCellView.swift in Sources */,
+				88275F7028F71B9700237B60 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

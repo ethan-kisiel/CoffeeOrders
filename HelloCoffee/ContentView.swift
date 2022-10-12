@@ -28,7 +28,7 @@ struct ContentView: View {
             {
                 Spacer()
                 Text("Add New Order")
-                    .accessibilityIdentifier("placeOrderButton")
+                    .accessibilityIdentifier("addNewOrderButton")
             }.padding(9)
         }
         VStack

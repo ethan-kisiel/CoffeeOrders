@@ -33,12 +33,12 @@ struct HelloCoffeeApp: App {
                 { route in
                     switch route
                     {
-                    case .orders:
-                        ContentView()
-                            .environmentObject(model)
-                    case .addOrder:
-                        AddCoffeeView()
-                            .environmentObject(model)
+                        case .orders:
+                            ContentView()
+                                .environmentObject(model)
+                        case .addOrder:
+                            AddCoffeeView()
+                                .environmentObject(model)
                     }
                 }
             }
