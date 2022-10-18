@@ -10,6 +10,8 @@ enum Endpoints
 {
     case allOrders
     case placeOrder
+    case updateOrder(Int)
+    case deleteOrder(Int)
     
     var path: String
     {
@@ -19,6 +21,10 @@ enum Endpoints
                 return "/orders"
             case .placeOrder:
                 return "/place-order"
+            case .updateOrder(let orderId):
+                return "/orders/\(orderId)"
+            case .deleteOrder(let orderId):
+                return "/orders/\(orderId)"
         }
     }
 }

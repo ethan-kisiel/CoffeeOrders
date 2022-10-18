@@ -6,7 +6,61 @@
 //
 
 import XCTest
-
+final class when_deleting_an_order: XCTestCase
+{
+    private var app: XCUIApplication!
+    
+    override func setUp()
+    {
+        app = XCUIApplication()
+        continueAfterFailure = false
+        app.launchEnvironment = ["ENV": "DEV"]
+        app.launch()
+        
+        // go to place order screen
+        app.buttons["addNewOrderButton"].tap()
+        
+        let nameTextField = app.textFields["name"]
+        let coffeeNameTextField = app.textFields["coffeeName"]
+        let priceTextField = app.textFields["price"]
+        let placeOrderButton = app.buttons["placeOrderButton"]
+        
+        nameTextField.tap()
+        nameTextField.typeText("Tester")
+        
+        coffeeNameTextField.tap()
+        coffeeNameTextField.typeText("Hot Coffee")
+        
+        priceTextField.tap()
+        priceTextField.typeText("4.50")
+        
+        placeOrderButton.tap()
+    }
+    
+    func test_should_delete_order()
+    {
+        let collectionViewsQuery = XCUIApplication().collectionViews
+        let cellsQuery = collectionViewsQuery.cells
+        let element = cellsQuery.children(matching: .other).element(boundBy: 1).children(matching: .other).element
+        element.swipeLeft()
+        collectionViewsQuery.buttons["Delete"].tap()
+        
+        let orderList = app.collectionViews["orderList"]
+        XCTAssertEqual(0, orderList.cells.count)
+    }
+    
+    override func tearDown()
+    {
+        Task
+        {
+            guard let url = URL(string: "/clear-orders",
+                                relativeTo: URL(string: "http://192.168.33.14:5000")!)
+            else { return }
+            
+            let (_,_) = try! await URLSession.shared.data(from: url)
+        }
+    }
+}
 final class when_addiong_a_new_coffee_order: XCTestCase
 {
     private var app: XCUIApplication!
