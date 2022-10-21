@@ -22,6 +22,7 @@
 		88275F6C28F08F7300237B60 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6B28F08F7300237B60 /* View+Extensions.swift */; };
 		88275F6E28F0995F00237B60 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6D28F0995F00237B60 /* String+Extensions.swift */; };
 		88275F7028F71B9700237B60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275F6F28F71B9700237B60 /* Constants.swift */; };
+		88275FA42901856B00237B60 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88275FA32901856B00237B60 /* OrderDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		88275F6B28F08F7300237B60 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		88275F6D28F0995F00237B60 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		88275F6F28F71B9700237B60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		88275FA32901856B00237B60 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +95,10 @@
 		88275F3928EB4CBE00237B60 /* HelloCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				88275F4B28EB53CC00237B60 /* Models */,
 				88275F5428EE0A1C00237B60 /* Extensions */,
 				88275F5728EF198300237B60 /* Utils */,
 				88275F5128EB5A7100237B60 /* Views */,
-				88275F4B28EB53CC00237B60 /* Models */,
 				88275F4828EB537200237B60 /* Services */,
 				88275F3A28EB4CBE00237B60 /* HelloCoffeeApp.swift */,
 				88275F3C28EB4CBE00237B60 /* ContentView.swift */,
@@ -137,6 +139,7 @@
 			children = (
 				88275F5228EB5A8200237B60 /* OrderCellView.swift */,
 				88275F6928F08CBB00237B60 /* AddCoffeeView.swift */,
+				88275FA32901856B00237B60 /* OrderDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				88275F3B28EB4CBE00237B60 /* HelloCoffeeApp.swift in Sources */,
 				88275F6A28F08CBB00237B60 /* AddCoffeeView.swift in Sources */,
 				88275F4D28EB53DA00237B60 /* Order.swift in Sources */,
+				88275FA42901856B00237B60 /* OrderDetailView.swift in Sources */,
 				88275F5928EF199C00237B60 /* AppEnvironment.swift in Sources */,
 				88275F4A28EB538600237B60 /* Webservice.swift in Sources */,
 				88275F6C28F08F7300237B60 /* View+Extensions.swift in Sources */,

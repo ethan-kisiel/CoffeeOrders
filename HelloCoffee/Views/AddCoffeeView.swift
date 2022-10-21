@@ -14,11 +14,19 @@ struct AddCoffeeErrors
 }
 
 struct AddCoffeeView: View {
+    var order: Order? = nil
     @State private var name: String = ""
     @State private var coffeeName: String = ""
     @State private var price: String = ""
     @State private var coffeeSize: CoffeeSize = .medium
     @State private var errors: AddCoffeeErrors = AddCoffeeErrors()
+    
+    @State private var updatingOrder: Bool = false
+    
+    private var placeOrUpdate: String
+    {
+        updatingOrder ? "Update" : "Place"
+    }
     
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var model: CoffeeModel
@@ -57,10 +65,18 @@ struct AddCoffeeView: View {
     
     private func placeOrder() async
     {
-        let order = Order(name: name, coffeeName: coffeeName, total: Double(price) ?? 0, coffeeSize: coffeeSize)
+        let order = Order(id: order?.id ?? 0, name: name, coffeeName: coffeeName, total: Double(price) ?? 0, coffeeSize: coffeeSize)
+        
         do
         {
-            try await model.placeOrder(order)
+            if updatingOrder
+            {
+                try await model.updateOrder(order)
+            }
+            else
+            {
+                try await model.placeOrder(order)
+            }
             dismiss()
         }
         catch
@@ -69,6 +85,18 @@ struct AddCoffeeView: View {
         }
     }
     
+    private func populateExistingOrder()
+    {
+        if let order = order
+        {
+            name = order.name
+            coffeeName = order.coffeeName
+            coffeeSize = order.coffeeSize
+            price = String(order.total)
+            
+            updatingOrder = true
+        }
+    }
     var body: some View
     {
         Form
@@ -99,7 +127,8 @@ struct AddCoffeeView: View {
                 }
             }
             
-            Button("Place Order")
+            
+            Button("\(placeOrUpdate) Order")
             {
                 if validForm
                 {
@@ -112,7 +141,11 @@ struct AddCoffeeView: View {
             }.accessibilityIdentifier("placeOrderButton")
                 .centerHorizontally()
             
-        }.navigationTitle("Place Order")
+        }.navigationTitle("\(placeOrUpdate) Order")
+            .onAppear
+            {
+                populateExistingOrder()
+            }
     }
 }
 

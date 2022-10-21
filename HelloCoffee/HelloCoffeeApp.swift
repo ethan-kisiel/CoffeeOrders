@@ -11,6 +11,8 @@ enum Route: Hashable
 {
     case orders
     case addOrder
+    case order(orderId: Int)
+    case updateOrder(order: Order)
 }
 
 @main
@@ -38,6 +40,12 @@ struct HelloCoffeeApp: App {
                                 .environmentObject(model)
                         case .addOrder:
                             AddCoffeeView()
+                                .environmentObject(model)
+                        case .order(let orderId):
+                            OrderDetailView(orderId: orderId)
+                                .environmentObject(model)
+                        case .updateOrder(let order):
+                            AddCoffeeView(order: order)
                                 .environmentObject(model)
                     }
                 }
